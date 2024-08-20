@@ -2,6 +2,7 @@ import org.junit.Test;
 
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 public class UnionFindTest {
@@ -85,6 +86,19 @@ public class UnionFindTest {
      * Specifically, you may want to write a test for path compression and to check for the correctness
      * of all methods in your implementation.
      */
+
+    @Test
+    public void myTest(){
+        int N = 99;
+        UnionFind uf = new UnionFind(N);
+        for(int i = 0; i < N-1; i++){
+            uf.union(i, i + 1);
+        }
+        assertEquals(99, uf.sizeOf(2));
+
+        assertEquals(1, uf.find(10));
+
+    }
 
 }
 
